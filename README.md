@@ -1,6 +1,10 @@
 # argocd-sso-keycloak-operator
 This repository aims to give detailed instructions on how to configure SSO for OpenShift GitOps (ArgoCD) using KeyCloak Operator and Yaml files configuration
 
+## Yaml Files : 
+
+Yaml File examples exist under OpenShift Folder.
+
 ## SSO Integration for OpenShift GitOps with OpenShift Oauth Login:
 
 To integrate ArgoCD Instance with OpenShift Oauth Login, we need to have some sort of a connector in between as ArgoCD supports only native OIDC connections. DEX Server has this connector implemented out of the box but not yet supported by Red Hat (Not even installed when you create an ArgoCD Instance using OpenShift-Gitops Operator). The second option is to install a Red Hat SSO Server with KeyCloak to handle integration with OpenShift Oauth. In both solutions, once we have installed the DEX Server or the RHSSO, we have an easy way to integrate it with Oauth using either an OauthClient or a service account as an OAuth client. Documentation here :
