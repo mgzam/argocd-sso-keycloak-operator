@@ -1,4 +1,4 @@
-# openshift-gitops-sso-keycloak
+# argocd-sso-keycloak-operator
 This repository aims to give detailed instructions on how to configure SSO for OpenShift GitOps (ArgoCD) using KeyCloak Operator and Yaml files configuration
 
 ## SSO Integration for OpenShift GitOps with OpenShift Oauth Login:
