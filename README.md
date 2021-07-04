@@ -101,7 +101,7 @@ spec:
 
 ```
 
-* Configure ArgoCD CR using following Yamls :
+* Configure ArgoCD Secret and CR using following Yamls :
 
 ```bash
 $ oc edit secret <argocd-name>-secret -n <customer-namespace>
@@ -126,8 +126,6 @@ type: Opaque
 ```bash
 $ oc edit argocd -n <customer-namespace>
 ```
-
-* Create your ArgoCD
 
 ```yaml
 apiVersion: argoproj.io/v1alpha1
