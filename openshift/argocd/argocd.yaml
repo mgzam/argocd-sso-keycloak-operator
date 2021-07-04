@@ -1,0 +1,39 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ArgoCD
+metadata:
+  name: argocd
+  namespace: customer-gitops
+spec:
+  grafana:
+    enabled: false
+    ingress:
+      enabled: false
+    route:
+      enabled: false
+  # Configure here your OIDC Config from your REALM 
+  ## name: Display 
+  ## issuer: URL for your REALM
+  ## clientID: Your Client ID
+  ## clientSecret: Your client Secret stored in an OpenShift Secret: see argocd-yaml example 
+  ## RequestedScopres: Replace with Your Scopes
+  oidcConfig: "name: OpenShift Single Sign-On   
+               issuer: https://keycloak-idp-keycloak.example.com/auth/realms/idp-test  
+              clientID: idp-broker
+              clientSecret: $oidc.keycloak.clientSecret 
+              requestedScopes: [\"openid\", \"profile\", \"email\"]"
+  prometheus:
+    enabled: false
+    ingress:
+      enabled: false
+    route:
+      enabled: false
+  server:    
+    autoscale:
+      enabled: false
+    grpc:
+      ingress:
+        enabled: false
+    ingress:
+      enabled: false
+    route:
+      enabled: true

@@ -1,0 +1,27 @@
+apiVersion: keycloak.org/v1alpha1
+kind: KeycloakRealm
+metadata:
+  labels:
+    app: idp # Your Label Selector
+  name: idp-test # Name For you Realm
+  namespace: idp-keycloak # Where you installed your keycloak Operator
+spec:
+  instanceSelector:
+    matchLabels:
+      app: idp
+  realm:
+    displayName: IDP Realm
+    enabled: true
+    id: idp-test
+    identityProviders:
+    - addReadTokenRoleOnCreate: true
+      alias: openshift-v4 # Do Not Change tjos
+      config:
+        baseUrl: https://api.example.com:6443 # OpenShift API URL
+        clientId: idp-broker # Client ID
+        clientSecret: secret # CLient Secret
+      displayName: login with ocp4 # Display Name
+      enabled: true
+      internalId: idp-broker 
+      providerId: openshift-v4
+    realm: idp-test # Your Realm Name

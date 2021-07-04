@@ -1,0 +1,8 @@
+apiVersion: oauth.openshift.io/v1
+grantMethod: prompt
+kind: OAuthClient
+metadata:
+  name: idp-broker # Name of your oauthclient
+redirectURIs:
+- https://keycloak-idp-keycloak.example.com/auth/realms/idp-test/broker/openshift-v4/endpoint # Replace idp-test by your Realm Name
+secret: secret # Client Secret

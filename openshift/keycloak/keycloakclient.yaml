@@ -1,0 +1,26 @@
+apiVersion: keycloak.org/v1alpha1
+kind: KeycloakClient
+metadata:
+  labels:
+    app: idp # App Label for Realm Selector
+  name: example-client # Name of Your KeyCloakClient
+  namespace: idp-keycloak # Where you installed your keycloak Operator
+spec:
+  client:
+    baseUrl: /applications #Base URL for ArgoCD
+    clientId: idp-broker #Define your Client ID
+    defaultClientScopes: # Default Scopes
+    - openid
+    - profile
+    - email
+    directAccessGrantsEnabled: false 
+    implicitFlowEnabled: false
+    protocol: openid-connect
+    publicClient: false 
+    rootUrl: https://argocd-server-customer-gitops.example.com # URL to your ArgoCD  
+    secret: secret # Your Client Secret
+    standardFlowEnabled: true
+  realmSelector:
+    matchLabels:
+      app: idp # Same App Label for Realm Selector
+  scopeMappings: {}
