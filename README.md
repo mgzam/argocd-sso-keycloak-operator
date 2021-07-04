@@ -15,7 +15,7 @@ In this repository, you will find instructions and examples on how to configure 
 
 ### Requirements:
 
-* Install KeyCloak Operator in a namespace including CRDs, keycloak-operator deployment, role, rolebinding and service account. Check here [Install KeyCloak Operator]([Keycloak - Guide - Keycloak Operator on Openshift](https://www.keycloak.org/getting-started/getting-started-operator-openshift))
+* Install KeyCloak Operator in a namespace including CRDs, keycloak-operator deployment, role, rolebinding and service account. Check here [Install KeyCloak Operator](https://www.keycloak.org/getting-started/getting-started-operator-openshift)
 
 ### Instructions :
 
